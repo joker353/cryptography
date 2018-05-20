@@ -7,13 +7,17 @@ seed = 123
 
 random.seed(seed)
 
-message = "Gesslerowa"
-message += chr(0x7F)
+message = "Gesslerowa43892ddwe342SL@a[35"
+message += chr(0xFF)
 
 msg_binary = ''
 for m in message:
     m_bin = ''.join(format(ord(m), 'b'))
-    msg_binary += m_bin
+    x = 8 - len(m_bin)
+    zero = ''
+    for i in range(x):
+        zero += '0'
+    msg_binary += zero + m_bin
 
 print(msg_binary)
 
